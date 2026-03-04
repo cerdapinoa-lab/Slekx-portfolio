@@ -135,72 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animElements.forEach(el => observer.observe(el));
 
-  // ========================
-  // COUNTER ANIMATION
-  // ========================
-  const statNumbers = document.querySelectorAll('.stat-number');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.getAttribute('data-target'));
-        animateCounter(el, target);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNumbers.forEach(el => counterObserver.observe(el));
-
-  function animateCounter(el, target) {
-    const duration = 2000;
-    const start = performance.now();
-
-    function update(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(target * eased);
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = target;
-      }
-    }
-    requestAnimationFrame(update);
-  }
-
-  // ========================
-  // FAQ ACCORDION
-  // ========================
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      faqItems.forEach(i => i.classList.remove('active'));
-      if (!isActive) {
-        item.classList.add('active');
-      }
-    });
-  });
-
-  // ========================
-  // PROCESS ACCORDION
-  // ========================
-  const processSteps = document.querySelectorAll('.process-step');
-  if (processSteps.length) processSteps[0].classList.add('active');
-
-  processSteps.forEach(step => {
-    const header = step.querySelector('.step-header');
-    header.addEventListener('click', () => {
-      const isActive = step.classList.contains('active');
-      processSteps.forEach(s => s.classList.remove('active'));
-      if (!isActive) {
-        step.classList.add('active');
-      }
-    });
-  });
 
   // ========================
   // MAGNETIC BUTTONS
@@ -283,10 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = pj.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      img.style.transform = `scale(1.04) translate(${x * -15}px, ${y * -15}px)`;
+      img.style.transform = `translate(${x * -8}px, ${y * -8}px)`;
     });
     pj.addEventListener('mouseleave', () => {
-      img.style.transform = 'scale(1) translate(0, 0)';
+      img.style.transform = 'translate(0, 0)';
     });
   });
 
