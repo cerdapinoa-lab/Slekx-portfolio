@@ -253,42 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.3 });
   aboutLines.forEach(line => aboutObserver.observe(line));
 
-  // ========================
-  // EXPERTISE — FLOATING IMAGE PREVIEW
-  // ========================
-  const expItems = document.querySelectorAll('[data-exp]');
-  const expPreview = document.getElementById('expPreview');
-  const expPreviewImg = document.getElementById('expPreviewImg');
-  let expMouseX = 0, expMouseY = 0;
-  let expTargetX = 0, expTargetY = 0;
-
-  if (expPreview) {
-    expItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        const imgSrc = item.getAttribute('data-img');
-        if (imgSrc && expPreviewImg) {
-          expPreviewImg.src = imgSrc;
-          expPreview.classList.add('is-active');
-        }
-      });
-      item.addEventListener('mouseleave', () => {
-        expPreview.classList.remove('is-active');
-      });
-      item.addEventListener('mousemove', (e) => {
-        expMouseX = e.clientX + 20;
-        expMouseY = e.clientY - 110;
-      });
-    });
-
-    function animateExpPreview() {
-      expTargetX += (expMouseX - expTargetX) * 0.12;
-      expTargetY += (expMouseY - expTargetY) * 0.12;
-      expPreview.style.left = expTargetX + 'px';
-      expPreview.style.top = expTargetY + 'px';
-      requestAnimationFrame(animateExpPreview);
-    }
-    animateExpPreview();
-  }
 
   // ========================
   // PROJECT SCROLL REVEAL (clip-path + scale)
