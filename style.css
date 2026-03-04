@@ -970,6 +970,8 @@ ul { list-style: none; }
     padding: 0 1.25rem;
   }
   .pj--reverse .pj-inner { direction: ltr; grid-template-columns: 1fr; }
+  .pj--reverse .pj-col-left { order: 2; }
+  .pj--reverse .pj-col-right { order: 1; }
   .pj-col-left, .pj-col-right { padding: 2rem 0; }
   .pj-num {
     position: relative;
