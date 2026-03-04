@@ -55,6 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================
+  // FLOATING CONTACT BUBBLE
+  // ========================
+  const contactBubble = document.getElementById('contactBubble');
+  const contactBubbleBtn = document.getElementById('contactBubbleBtn');
+  contactBubbleBtn.addEventListener('click', () => {
+    contactBubble.classList.toggle('is-open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!contactBubble.contains(e.target)) {
+      contactBubble.classList.remove('is-open');
+    }
+  });
+
+  // ========================
   // AMBIENT GLOW (cursor)
   // ========================
   const glow = document.createElement('div');

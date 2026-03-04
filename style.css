@@ -1407,6 +1407,106 @@ a.contact-info:hover { color: #0a0a0a; }
   .stats-grid { grid-template-columns: 1fr; }
 }
 
+/* ========================
+   FLOATING CONTACT BUBBLE
+   ======================== */
+.contact-bubble {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9990;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+.contact-bubble-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.contact-bubble-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+}
+.contact-bubble-icon {
+  font-size: 1.1rem;
+  color: #fff;
+  position: absolute;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.contact-bubble-icon--close {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+.contact-bubble.is-open .contact-bubble-icon--open {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+.contact-bubble.is-open .contact-bubble-icon--close {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+.contact-bubble-popup {
+  background: #0a0a0a;
+  border-radius: 12px;
+  padding: 0.25rem 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  transform-origin: bottom right;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+  min-width: 210px;
+}
+.contact-bubble.is-open .contact-bubble-popup {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+.contact-bubble-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 1.2rem;
+  transition: background 0.2s;
+  border-radius: 8px;
+}
+.contact-bubble-item:hover { background: rgba(255,255,255,0.06); }
+.contact-bubble-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.contact-bubble-value {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.contact-bubble-sep {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 0 1.2rem;
+}
+
 /* Désactivation des effets de fond sur mobile */
 @media (max-width: 768px) {
   .hero-deco { display: none; }
