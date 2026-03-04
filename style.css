@@ -1406,3 +1406,15 @@ a.contact-info:hover { color: #0a0a0a; }
   .container { padding: 0 1.25rem; }
   .stats-grid { grid-template-columns: 1fr; }
 }
+
+/* Désactivation des effets de fond sur mobile */
+@media (max-width: 768px) {
+  .hero-deco { display: none; }
+  .ambient-glow { display: none; }
+  .about::before { display: none; }
+  .expertise::before,
+  .expertise::after { display: none; }
+  .projects::before { display: none; }
+  .contact::before,
+  .contact::after { display: none; }
+}
