@@ -8,12 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // LOADER
   // ========================
   const loader = document.getElementById('loader');
+  const loaderFlash = document.getElementById('loaderFlash');
   window.addEventListener('load', () => {
     setTimeout(() => {
-      loader.classList.add('hidden');
-      document.body.style.overflow = '';
-      animateHero();
-    }, 2200);
+      loaderFlash.classList.add('active');
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        document.body.style.overflow = '';
+        animateHero();
+      }, 450);
+    }, 2400);
   });
   document.body.style.overflow = 'hidden';
 
