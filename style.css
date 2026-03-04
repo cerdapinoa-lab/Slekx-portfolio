@@ -1242,22 +1242,6 @@ a.contact-info:hover { color: #0a0a0a; }
   position: relative;
   overflow: hidden;
 }
-.footer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent 0, transparent 79px,
-    rgba(10,10,10,0.04) 79px, rgba(10,10,10,0.04) 80px
-  );
-  pointer-events: none;
-  animation: footer-fade 5s ease-in-out infinite;
-}
-@keyframes footer-fade {
-  0%, 100% { opacity: 0.4; }
-  50%       { opacity: 1; }
-}
 .footer > .container { position: relative; z-index: 1; }
 .footer-inner {
   display: flex;
