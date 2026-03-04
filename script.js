@@ -55,6 +55,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================
+  // AMBIENT GLOW (cursor)
+  // ========================
+  const glow = document.createElement('div');
+  glow.className = 'ambient-glow';
+  document.body.appendChild(glow);
+  let glowX = window.innerWidth / 2, glowY = window.innerHeight / 2;
+  let glowTX = glowX, glowTY = glowY;
+  document.addEventListener('mousemove', (e) => { glowTX = e.clientX; glowTY = e.clientY; });
+  function animateGlow() {
+    glowX += (glowTX - glowX) * 0.06;
+    glowY += (glowTY - glowY) * 0.06;
+    glow.style.left = glowX + 'px';
+    glow.style.top  = glowY + 'px';
+    requestAnimationFrame(animateGlow);
+  }
+  animateGlow();
+
+  // ========================
   // NAVBAR SCROLL
   // ========================
   const navbar = document.getElementById('navbar');
