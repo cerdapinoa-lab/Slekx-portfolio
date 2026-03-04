@@ -205,7 +205,9 @@ ul { list-style: none; }
 .nav-link:hover { opacity: 0.5; }
 
 .nav-link--shop {
-  border: 1px solid currentColor;
+  background: #0a0a0a;
+  color: #fff !important;
+  border: 1px solid #0a0a0a;
   padding: 0.2rem 0.55rem;
   opacity: 1 !important;
   position: relative;
@@ -218,10 +220,10 @@ ul { list-style: none; }
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.07), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
   animation: shopShimmer 3.5s ease infinite;
 }
-.nav-link--shop:hover { opacity: 0.7 !important; }
+.nav-link--shop:hover { opacity: 0.75 !important; }
 @keyframes shopShimmer {
   0%   { left: -100%; }
   45%  { left: 100%; }
@@ -1445,9 +1447,10 @@ a.contact-info:hover { color: #0a0a0a; }
   gap: 0.75rem;
 }
 .contact-bubble-btn {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
+  width: auto;
+  height: 44px;
+  border-radius: 999px;
+  padding: 0 1.2rem;
   background: #0a0a0a;
   border: none;
   cursor: pointer;
@@ -1461,11 +1464,13 @@ a.contact-info:hover { color: #0a0a0a; }
   flex-shrink: 0;
 }
 .contact-bubble-btn:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   box-shadow: 0 8px 28px rgba(0,0,0,0.35);
 }
 .contact-bubble-icon {
-  font-size: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
   color: #fff;
   position: absolute;
   transition: opacity 0.25s ease, transform 0.25s ease;
