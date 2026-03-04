@@ -1492,15 +1492,15 @@ a.contact-info:hover { color: #0a0a0a; }
 }
 .contact-bubble-popup {
   background: #0a0a0a;
-  border-radius: 12px;
-  padding: 0.25rem 0;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  border-radius: 16px;
+  padding: 0.4rem 0;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
   opacity: 0;
   transform: translateY(12px) scale(0.95);
   transform-origin: bottom right;
   transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   pointer-events: none;
-  min-width: 210px;
+  min-width: 260px;
 }
 .contact-bubble.is-open .contact-bubble-popup {
   opacity: 1;
@@ -1510,22 +1510,22 @@ a.contact-info:hover { color: #0a0a0a; }
 .contact-bubble-item {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.9rem 1.2rem;
+  gap: 0.3rem;
+  padding: 1.1rem 1.5rem;
   transition: background 0.2s;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 .contact-bubble-item:hover { background: rgba(255,255,255,0.06); }
 .contact-bubble-label {
   font-family: var(--font-mono);
-  font-size: 0.55rem;
+  font-size: 0.6rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.4);
 }
 .contact-bubble-value {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.04em;
