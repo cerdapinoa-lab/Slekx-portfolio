@@ -465,7 +465,15 @@ ul { list-style: none; }
   font-size: 0.65rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #0a0a0a;
+  color: #16a34a;
+}
+.hero-available-dot {
+  color: #22c55e;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 .hero-email {
   font-family: var(--font-mono);
