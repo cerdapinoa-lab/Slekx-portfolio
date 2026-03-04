@@ -534,24 +534,6 @@ ul { list-style: none; }
   text-orientation: mixed;
 }
 
-/* Scroll indicator (hero) */
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-.scroll-line {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(180deg, #0a0a0a, transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
-  50% { opacity: 1; transform: scaleY(1); }
-}
 
 /* REVEAL TEXT */
 .reveal-text {
